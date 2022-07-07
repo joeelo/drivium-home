@@ -1,45 +1,42 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react"
+import styled from "styled-components"
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <VideoBackground>
+      <Video src="/production-ID-4990242.mp4" autoPlay loop />
+      <H1>DRIVIUM</H1>
+    </VideoBackground>
   )
 }
 
 export default App
+
+const VideoBackground = styled.div`
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  background-color: blue;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
+  overflow: hidden;
+`
+
+const Video = styled.video`
+  position: absolute;
+  left: 0;
+  top: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+`
+
+const H1 = styled.h1`
+  font-weight: 800;
+  color: white;
+  font-size: 128px;
+  z-index: 1000;
+  font-family: "Montserrat", sans-serif;
+`
